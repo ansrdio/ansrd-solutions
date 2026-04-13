@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="border-t border-border/50 bg-surface">
@@ -26,29 +28,29 @@ export default function Footer() {
             <h4 className="text-xs font-mono text-muted uppercase tracking-widest mb-4">Navigate</h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="#stats" className="text-muted hover:text-accent transition-colors">
-                  The Problem
-                </a>
+                <Link href="/services" className="text-muted hover:text-accent transition-colors">
+                  Services
+                </Link>
               </li>
               <li>
-                <a href="#how-it-works" className="text-muted hover:text-accent transition-colors">
-                  How It Works
-                </a>
+                <Link href="/training" className="text-muted hover:text-accent transition-colors">
+                  Training
+                </Link>
               </li>
               <li>
-                <a href="#preview" className="text-muted hover:text-accent transition-colors">
-                  Live Demo
-                </a>
+                <Link href="/frameworks" className="text-muted hover:text-accent transition-colors">
+                  Frameworks
+                </Link>
               </li>
               <li>
-                <a href="#assess" className="text-muted hover:text-accent transition-colors">
-                  Assessment
-                </a>
+                <Link href="/roadmap" className="text-muted hover:text-accent transition-colors">
+                  Roadmap
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-muted hover:text-accent transition-colors">
+                <Link href="/contact" className="text-muted hover:text-accent transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const terminalLines = [
   { text: "$ ansrd scan --target smb-network", delay: 0 },
@@ -49,24 +50,24 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="#preview"
+              <Link
+                href="/services"
                 className="inline-flex items-center justify-center gap-2 bg-accent text-background px-6 py-3 rounded-md font-semibold text-sm hover:bg-accent/90 transition-all shadow-[0_0_20px_rgba(0,229,255,0.3)] hover:shadow-[0_0_30px_rgba(0,229,255,0.5)]"
               >
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                See Live Demo
-              </a>
-              <a
-                href="#assess"
+                See How It Works
+              </Link>
+              <Link
+                href="/frameworks"
                 className="inline-flex items-center justify-center gap-2 border border-border text-foreground px-6 py-3 rounded-md font-medium text-sm hover:border-accent/30 hover:text-accent transition-all"
               >
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M8 1v14M1 8h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
                 Take Assessment
-              </a>
+              </Link>
             </div>
 
             <div className="flex items-center gap-6 mt-8 pt-6 border-t border-border/50">

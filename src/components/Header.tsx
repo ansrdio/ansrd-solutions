@@ -12,31 +12,25 @@ export default function Header() {
             ANSRD<span className="text-accent">.</span>
           </span>
         </Link>
-        <nav className="hidden md:flex items-center gap-8 text-sm">
-          <a href="#stats" className="text-muted hover:text-accent transition-colors">
-            The Problem
-          </a>
-          <a href="#how-it-works" className="text-muted hover:text-accent transition-colors">
-            How It Works
-          </a>
-          <a href="#preview" className="text-muted hover:text-accent transition-colors">
-            Live Demo
-          </a>
-          <a href="#assess" className="text-muted hover:text-accent transition-colors">
-            Assessment
-          </a>
-          <a href="#awareness" className="text-muted hover:text-accent transition-colors">
+        <nav className="hidden md:flex items-center gap-7 text-sm">
+          <Link href="/services" className="text-muted hover:text-accent transition-colors">
+            Services
+          </Link>
+          <Link href="/training" className="text-muted hover:text-accent transition-colors">
             Training
-          </a>
-          <a href="#automation" className="text-muted hover:text-accent transition-colors">
+          </Link>
+          <Link href="/frameworks" className="text-muted hover:text-accent transition-colors">
+            Frameworks
+          </Link>
+          <Link href="/roadmap" className="text-muted hover:text-accent transition-colors">
             Roadmap
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href="/contact"
             className="bg-accent/10 text-accent border border-accent/30 px-4 py-2 rounded-md text-sm font-medium hover:bg-accent/20 transition-all"
           >
             Get Started
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
