@@ -51,7 +51,7 @@ const trainingEvents = [
   },
 ];
 
-export default function NigeriaTraining() {
+export default function OnsiteTraining() {
   return (
     <>
       {/* Hero */}
