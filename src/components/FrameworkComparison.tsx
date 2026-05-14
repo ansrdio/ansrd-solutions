@@ -171,16 +171,16 @@ export default function FrameworkComparison() {
   const fw = frameworks.find((f) => f.id === active)!;
 
   return (
-    <section id="frameworks" className="py-12 sm:py-16 border-b border-border/50">
+    <section id="frameworks" className="py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="max-w-2xl mb-6">
-          <span className="inline-block text-xs font-mono text-accent tracking-wider uppercase mb-3">
-            // framework_mapper
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="inline-block text-sm font-semibold text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6">
+            Frameworks
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
             We work with the frameworks you need
           </h2>
-          <p className="text-muted leading-relaxed">
+          <p className="text-muted leading-relaxed text-lg">
             Select a framework to see how we map it into actionable controls. Every framework
             gets the same treatment: broken down, prioritized, and made executable.
           </p>
@@ -192,10 +192,10 @@ export default function FrameworkComparison() {
             <button
               key={f.id}
               onClick={() => setActive(f.id)}
-              className={`px-4 py-2.5 rounded-lg font-mono text-sm font-medium transition-all duration-300 ${
+              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                 active === f.id
-                  ? `${f.colorBg} ${f.color} ${f.colorBorder} border`
-                  : "border border-border/50 text-muted hover:text-foreground hover:border-border"
+                  ? "bg-primary text-white shadow-glow-primary"
+                  : "bg-white border border-border text-muted hover:text-foreground shadow-soft"
               }`}
             >
               {f.name}
@@ -206,7 +206,7 @@ export default function FrameworkComparison() {
         {/* Framework detail */}
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Info card */}
-          <div className={`rounded-lg border ${fw.colorBorder} ${fw.colorBg} p-6`}>
+          <div className="rounded-2xl bg-white shadow-soft border border-border/50 p-6">
             <h3 className={`text-xl font-bold ${fw.color} mb-1`}>{fw.fullName}</h3>
             <p className="text-sm text-muted mb-6 leading-relaxed">{fw.description}</p>
 
@@ -233,7 +233,7 @@ export default function FrameworkComparison() {
           </div>
 
           {/* Domain breakdown */}
-          <div className="lg:col-span-2 rounded-lg border border-border/50 bg-surface-2 p-6">
+          <div className="lg:col-span-2 rounded-2xl bg-white shadow-soft border border-border/50 p-6">
             <h4 className="text-xs font-mono text-muted uppercase tracking-widest mb-4">
               Control Domain Mapping
             </h4>

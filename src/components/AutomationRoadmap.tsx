@@ -62,8 +62,8 @@ const phases: Phase[] = [
 
 const statusStyles = {
   available: { dot: "bg-green animate-pulse", text: "text-green", label: "LIVE", border: "border-green/30", bg: "bg-green/5" },
-  coming: { dot: "bg-accent", text: "text-accent", label: "BUILDING", border: "border-accent/30", bg: "bg-accent/5" },
-  future: { dot: "bg-muted", text: "text-muted", label: "PLANNED", border: "border-border/50", bg: "bg-surface-2" },
+  coming: { dot: "bg-primary", text: "text-primary", label: "BUILDING", border: "border-primary/30", bg: "bg-primary/5" },
+  future: { dot: "bg-muted", text: "text-muted", label: "PLANNED", border: "border-border/50", bg: "bg-surface" },
 };
 
 export default function AutomationRoadmap() {
@@ -72,19 +72,18 @@ export default function AutomationRoadmap() {
   const ss = statusStyles[phase.status];
 
   return (
-    <section id="automation" className="py-12 sm:py-16 bg-surface border-y border-border/50 relative">
-      <div className="absolute inset-0 cyber-grid opacity-30" />
+    <section id="automation" className="py-16 sm:py-24 bg-surface relative">
       <div className="relative mx-auto max-w-6xl px-6">
-        <div className="max-w-2xl mb-6">
-          <span className="inline-block text-xs font-mono text-green tracking-wider uppercase mb-3">
-            // product_roadmap.v2
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="inline-block text-sm font-semibold text-green bg-green/10 px-4 py-1.5 rounded-full mb-6">
+            Roadmap
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
             From manual to automated
           </h2>
-          <p className="text-muted leading-relaxed">
+          <p className="text-muted leading-relaxed text-lg">
             We&apos;re building toward full automation. Today you get structured implementation.
-            Tomorrow, your compliance runs itself. Here&apos;s the roadmap.
+            Tomorrow, your compliance runs itself.
           </p>
         </div>
 
@@ -97,10 +96,10 @@ export default function AutomationRoadmap() {
               <button
                 key={p.id}
                 onClick={() => setActivePhase(p.id)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-mono text-sm transition-all duration-300 whitespace-nowrap ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap ${
                   isActive
-                    ? `${s.bg} ${s.text} border ${s.border}`
-                    : "border border-border/50 text-muted hover:text-foreground hover:border-border"
+                    ? "bg-primary text-white shadow-glow-primary"
+                    : "bg-white border border-border text-muted hover:text-foreground shadow-soft"
                 }`}
               >
                 <div className={`w-2 h-2 rounded-full ${s.dot}`} />
@@ -111,10 +110,10 @@ export default function AutomationRoadmap() {
         </div>
 
         {/* Phase detail */}
-        <div className={`rounded-lg border ${ss.border} ${ss.bg} p-6 sm:p-8`}>
+        <div className="rounded-2xl bg-white shadow-soft border border-border/50 p-6 sm:p-8">
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-2">
             <div className="flex items-center gap-3">
-              <span className={`text-[10px] font-mono font-bold ${ss.text} ${ss.bg} border ${ss.border} px-2 py-0.5 rounded`}>
+              <span className={`text-[10px] font-mono font-bold ${ss.text} ${ss.bg} border ${ss.border} px-2 py-0.5 rounded-full`}>
                 {ss.label}
               </span>
               <h3 className={`text-xl font-bold ${ss.text}`}>{phase.title}</h3>
@@ -130,7 +129,7 @@ export default function AutomationRoadmap() {
             {phase.features.map((f) => (
               <div
                 key={f.name}
-                className="flex items-center gap-3 p-3 rounded-lg bg-surface-2/50 border border-border/30"
+                className="flex items-center gap-3 p-3 rounded-xl bg-surface border border-border/30"
               >
                 {f.available ? (
                   <div className="w-5 h-5 rounded bg-green/10 flex items-center justify-center flex-shrink-0">

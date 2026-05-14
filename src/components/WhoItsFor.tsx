@@ -52,31 +52,31 @@ export default function WhoItsFor() {
   ];
 
   return (
-    <section id="who" className="py-12 sm:py-16 bg-surface border-y border-border/50">
+    <section id="who" className="py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="max-w-2xl mb-8">
-          <span className="inline-block text-xs font-mono text-accent tracking-wider uppercase mb-3">
-            // target_profiles
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="inline-block text-sm font-semibold text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6">
+            Who It&apos;s For
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
             Built for teams that do the work
           </h2>
-          <p className="text-muted leading-relaxed">
+          <p className="text-muted leading-relaxed text-lg">
             Not for enterprises with 50-person security teams. For the businesses where
             one person is IT, security, and compliance all at once.
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-2 gap-6">
           {audiences.map((item) => (
             <div
               key={item.title}
-              className="group rounded-lg border border-border/50 bg-surface-2 p-6 hover:border-accent/20 transition-all duration-300"
+              className="group rounded-2xl bg-white shadow-soft border border-border/50 p-6 hover:border-primary/20 hover:shadow-glow-primary/20 transition-all duration-300"
             >
               <div className="flex items-center justify-between mb-4">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                   {item.icon}
                 </div>
-                <span className="text-[10px] font-mono text-accent/50 bg-accent/5 px-2 py-0.5 rounded">
+                <span className="text-[10px] font-semibold text-primary/60 bg-primary/5 px-2 py-0.5 rounded-full">
                   {item.tag}
                 </span>
               </div>

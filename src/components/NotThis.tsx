@@ -27,49 +27,47 @@ export default function NotThis() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 border-b border-border/50">
+    <section className="py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="max-w-2xl mb-8">
-          <span className="inline-block text-xs font-mono text-red tracking-wider uppercase mb-3">
-            // differentiation.map
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="inline-block text-sm font-semibold text-red bg-red/10 px-4 py-1.5 rounded-full mb-6">
+            Differentiation
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
             What this is <span className="text-red">not</span>
           </h2>
-          <p className="text-muted leading-relaxed">
+          <p className="text-muted leading-relaxed text-lg">
             There are plenty of security tools, consultants, and platforms. This is
             fundamentally different in approach and output.
           </p>
         </div>
-        <div className="space-y-3 max-w-3xl">
+        <div className="space-y-4 max-w-3xl mx-auto">
           {comparisons.map((item) => (
             <div
               key={item.not}
-              className="grid sm:grid-cols-2 gap-px rounded-lg overflow-hidden border border-border/50"
+              className="grid sm:grid-cols-2 gap-px rounded-2xl overflow-hidden border border-border/50 shadow-soft"
             >
-              {/* NOT side */}
-              <div className="bg-red/5 p-4 sm:p-5">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-5 h-5 rounded bg-red/10 flex items-center justify-center flex-shrink-0">
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="text-red">
-                      <path d="M2 2l6 6M8 2l-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              <div className="bg-red/5 p-5">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="w-6 h-6 rounded-full bg-red/10 flex items-center justify-center flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="text-red">
+                      <path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   </div>
-                  <span className="text-sm font-medium text-red/80">Not {item.not.toLowerCase()}</span>
+                  <span className="text-sm font-semibold text-red">Not {item.not.toLowerCase()}</span>
                 </div>
-                <p className="text-xs text-muted ml-7">{item.notDetail}</p>
+                <p className="text-xs text-muted ml-8">{item.notDetail}</p>
               </div>
-              {/* INSTEAD side */}
-              <div className="bg-green/5 p-4 sm:p-5">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-5 h-5 rounded bg-green/10 flex items-center justify-center flex-shrink-0">
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="text-green">
-                      <path d="M2 5l2.5 2.5L8 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <div className="bg-green/5 p-5">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="w-6 h-6 rounded-full bg-green/10 flex items-center justify-center flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="text-green">
+                      <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <span className="text-sm font-medium text-green/80">{item.instead}</span>
+                  <span className="text-sm font-semibold text-green">{item.instead}</span>
                 </div>
-                <p className="text-xs text-muted ml-7">{item.insteadDetail}</p>
+                <p className="text-xs text-muted ml-8">{item.insteadDetail}</p>
               </div>
             </div>
           ))}

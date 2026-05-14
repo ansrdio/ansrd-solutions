@@ -99,19 +99,18 @@ export default function SecurityAwareness() {
   const [tab, setTab] = useState<"campaigns" | "modules">("modules");
 
   return (
-    <section id="awareness" className="py-12 sm:py-16 bg-surface border-y border-border/50">
+    <section id="awareness" className="py-16 sm:py-24 bg-surface">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="max-w-2xl mb-6">
-          <span className="inline-block text-xs font-mono text-amber tracking-wider uppercase mb-3">
-            // security_awareness.program
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="inline-block text-sm font-semibold text-amber bg-amber/10 px-4 py-1.5 rounded-full mb-6">
+            Security Awareness
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
             Your people are the first line of defense
           </h2>
-          <p className="text-muted leading-relaxed">
+          <p className="text-muted leading-relaxed text-lg">
             95% of breaches involve human error. We run continuous awareness programs —
             phishing simulations, bite-sized training modules, and measurable behavior change.
-            Not a once-a-year PowerPoint.
           </p>
         </div>
 
@@ -119,20 +118,20 @@ export default function SecurityAwareness() {
         <div className="flex gap-2 mb-6">
           <button
             onClick={() => setTab("modules")}
-            className={`px-4 py-2 rounded-lg font-mono text-sm font-medium transition-all ${
+            className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
               tab === "modules"
-                ? "bg-accent/10 text-accent border border-accent/30"
-                : "border border-border/50 text-muted hover:text-foreground"
+                ? "bg-primary text-white shadow-glow-primary"
+                : "bg-white border border-border text-muted hover:text-foreground shadow-soft"
             }`}
           >
             Training Modules
           </button>
           <button
             onClick={() => setTab("campaigns")}
-            className={`px-4 py-2 rounded-lg font-mono text-sm font-medium transition-all ${
+            className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
               tab === "campaigns"
-                ? "bg-amber/10 text-amber border border-amber/30"
-                : "border border-border/50 text-muted hover:text-foreground"
+                ? "bg-primary text-white shadow-glow-primary"
+                : "bg-white border border-border text-muted hover:text-foreground shadow-soft"
             }`}
           >
             Phishing Simulations
@@ -140,7 +139,7 @@ export default function SecurityAwareness() {
         </div>
 
         {tab === "modules" && (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {modules.map((m) => {
               const colorMap: Record<string, { bar: string; text: string; bg: string }> = {
                 accent: { bar: "bg-accent", text: "text-accent", bg: "bg-accent/10" },
@@ -149,7 +148,7 @@ export default function SecurityAwareness() {
               };
               const c = colorMap[m.color];
               return (
-                <div key={m.title} className="rounded-lg border border-border/50 bg-surface-2 p-5 hover:border-border transition-all">
+                <div key={m.title} className="rounded-2xl bg-white shadow-soft border border-border/50 p-5 hover:border-primary/20 hover:shadow-glow-primary/20 transition-all">
                   <div className="flex items-center justify-between mb-3">
                     <span className={`text-[10px] font-mono ${c.text} ${c.bg} px-2 py-0.5 rounded`}>
                       {m.difficulty.toUpperCase()}
@@ -159,7 +158,7 @@ export default function SecurityAwareness() {
                   <h4 className="font-semibold text-foreground text-sm mb-2">{m.title}</h4>
                   <div className="flex flex-wrap gap-1.5 mb-3">
                     {m.topics.map((t) => (
-                      <span key={t} className="text-[10px] font-mono text-muted bg-surface-3 px-1.5 py-0.5 rounded">
+                      <span key={t} className="text-[10px] font-medium text-muted bg-surface px-1.5 py-0.5 rounded">
                         {t}
                       </span>
                     ))}
@@ -199,7 +198,7 @@ export default function SecurityAwareness() {
               return (
                 <div
                   key={c.id}
-                  className="grid grid-cols-12 gap-3 items-center rounded-lg border border-border/50 bg-surface-2 px-4 py-3"
+                  className="grid grid-cols-12 gap-3 items-center rounded-xl bg-white shadow-soft border border-border/50 px-4 py-3"
                 >
                   <div className="col-span-12 sm:col-span-4">
                     <span className="text-sm font-medium text-foreground">{c.name}</span>
@@ -237,9 +236,9 @@ export default function SecurityAwareness() {
                 </div>
               );
             })}
-            <div className="rounded-lg border border-accent/20 bg-accent/5 p-4 mt-3">
+            <div className="rounded-xl border border-primary/10 bg-primary/5 p-4 mt-3">
               <p className="text-xs text-muted leading-relaxed">
-                <span className="text-accent font-mono font-bold">NOTE:</span> This is sample campaign data.
+                <span className="text-primary font-semibold">NOTE:</span> This is sample campaign data.
                 Your simulations are tailored to your industry, tech stack, and common threat patterns.
                 Campaigns run continuously with escalating difficulty to build real resilience.
               </p>

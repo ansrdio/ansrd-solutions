@@ -97,27 +97,27 @@ export default function ThreatAssessment() {
   };
 
   return (
-    <section id="assess" className="py-12 sm:py-16 bg-surface border-y border-border/50">
+    <section id="assess" className="py-16 sm:py-24 bg-surface">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="max-w-2xl mb-6">
-          <span className="inline-block text-xs font-mono text-amber tracking-wider uppercase mb-3">
-            // security_assessment.run
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="inline-block text-sm font-semibold text-amber bg-amber/10 px-4 py-1.5 rounded-full mb-6">
+            Quick Assessment
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
             How secure is your business right now?
           </h2>
-          <p className="text-muted leading-relaxed">
+          <p className="text-muted leading-relaxed text-lg">
             Answer 5 quick questions. Get an instant security grade and see where your gaps are.
             Takes less than 60 seconds.
           </p>
         </div>
 
-        <div className="max-w-2xl">
+        <div className="max-w-2xl mx-auto">
           {/* Progress */}
           <div className="mb-6 flex items-center gap-3">
-            <div className="flex-1 h-1 bg-surface-3 rounded-full overflow-hidden">
+            <div className="flex-1 h-1.5 bg-surface-3 rounded-full overflow-hidden">
               <div
-                className="h-full bg-accent rounded-full transition-all duration-500"
+                className="h-full bg-primary rounded-full transition-all duration-500"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -127,9 +127,9 @@ export default function ThreatAssessment() {
           </div>
 
           {!showResults ? (
-            <div className="glow-border rounded-lg bg-surface-2 p-6 sm:p-8">
+            <div className="rounded-2xl bg-white shadow-soft border border-border/50 p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-xs font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">
+                <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded">
                   Q{currentQ + 1}
                 </span>
                 <span className="text-xs font-mono text-muted">{questions[currentQ].id.toUpperCase()}_CHECK</span>
@@ -154,7 +154,7 @@ export default function ThreatAssessment() {
                             : opt.score >= 1
                             ? "border-amber/50 bg-amber/10"
                             : "border-red/50 bg-red/10"
-                          : "border-border/50 bg-surface-3/50 hover:border-accent/30 hover:bg-surface-3"
+                          : "border-border/50 bg-surface hover:border-primary/30 hover:bg-surface-2"
                       } disabled:cursor-default`}
                     >
                       <div className="flex items-center gap-3">
@@ -186,7 +186,7 @@ export default function ThreatAssessment() {
               </div>
             </div>
           ) : (
-            <div className={`rounded-lg border ${grade.border} ${grade.bg} p-6 sm:p-8`}>
+            <div className="rounded-2xl bg-white shadow-soft border border-border/50 p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-6">
                 <span className="text-xs font-mono text-muted">ASSESSMENT_COMPLETE</span>
               </div>
@@ -230,13 +230,13 @@ export default function ThreatAssessment() {
               <div className="flex gap-3">
                 <a
                   href="#contact"
-                  className="inline-flex items-center justify-center gap-2 bg-accent text-background px-5 py-2.5 rounded-md font-semibold text-sm hover:bg-accent/90 transition-all shadow-[0_0_15px_rgba(0,229,255,0.3)]"
+                  className="inline-flex items-center justify-center gap-2 gradient-cta text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all shadow-glow-primary"
                 >
                   Get your action plan
                 </a>
                 <button
                   onClick={reset}
-                  className="inline-flex items-center justify-center gap-2 border border-border text-muted px-5 py-2.5 rounded-md text-sm hover:text-foreground hover:border-accent/30 transition-all"
+                  className="inline-flex items-center justify-center gap-2 bg-white border border-border text-muted px-5 py-2.5 rounded-full text-sm hover:text-foreground hover:border-primary/30 transition-all shadow-soft"
                 >
                   Retake
                 </button>

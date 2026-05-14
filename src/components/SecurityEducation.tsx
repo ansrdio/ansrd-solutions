@@ -151,19 +151,18 @@ export default function SecurityEducation() {
   const path = paths.find((p) => p.id === activePath)!;
 
   return (
-    <section id="education" className="py-12 sm:py-16 border-b border-border/50 relative">
-      <div className="absolute inset-0 cyber-grid opacity-20" />
+    <section id="education" className="py-16 sm:py-24 relative">
       <div className="relative mx-auto max-w-6xl px-6">
-        <div className="max-w-2xl mb-6">
-          <span className="inline-block text-xs font-mono text-green tracking-wider uppercase mb-3">
-            // security_education.paths
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="inline-block text-sm font-semibold text-green bg-green/10 px-4 py-1.5 rounded-full mb-6">
+            Education Paths
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
             Structured security education
           </h2>
-          <p className="text-muted leading-relaxed">
+          <p className="text-muted leading-relaxed text-lg">
             Role-based learning paths that build real security competence across your organization.
-            From frontline staff to leadership — everyone gets the knowledge they need to do their part.
+            From frontline staff to leadership — everyone gets the knowledge they need.
           </p>
         </div>
 
@@ -173,10 +172,10 @@ export default function SecurityEducation() {
             <button
               key={p.id}
               onClick={() => setActivePath(p.id)}
-              className={`px-4 py-2 rounded-lg font-mono text-sm font-medium transition-all ${
+              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
                 activePath === p.id
-                  ? `${p.colorBg} ${p.color} ${p.colorBorder} border`
-                  : "border border-border/50 text-muted hover:text-foreground hover:border-border"
+                  ? "bg-primary text-white shadow-glow-primary"
+                  : "bg-white border border-border text-muted hover:text-foreground shadow-soft"
               }`}
             >
               {p.title}
@@ -186,7 +185,7 @@ export default function SecurityEducation() {
 
         <div className="grid lg:grid-cols-3 gap-4">
           {/* Path overview card */}
-          <div className={`rounded-lg border ${path.colorBorder} ${path.colorBg} p-5`}>
+          <div className="rounded-2xl bg-white shadow-soft border border-border/50 p-5">
             <div className="flex items-center justify-between mb-3">
               <span className={`text-[10px] font-mono ${path.color} uppercase tracking-widest`}>
                 {path.audience}
@@ -212,7 +211,7 @@ export default function SecurityEducation() {
                   ).map(([type, count]) => {
                     const ti = typeIcons[type];
                     return (
-                      <span key={type} className="flex items-center gap-1 text-[10px] font-mono text-muted bg-surface-3/50 px-2 py-0.5 rounded">
+                      <span key={type} className="flex items-center gap-1 text-[10px] font-mono text-muted bg-surface px-2 py-0.5 rounded">
                         <span className={ti.color}>{ti.icon}</span>
                         {count} {ti.label}
                       </span>
@@ -224,7 +223,7 @@ export default function SecurityEducation() {
           </div>
 
           {/* Module list */}
-          <div className="lg:col-span-2 rounded-lg border border-border/50 bg-surface-2 p-5">
+          <div className="lg:col-span-2 rounded-2xl bg-white shadow-soft border border-border/50 p-5">
             <h4 className="text-xs font-mono text-muted uppercase tracking-widest mb-4">
               Learning Modules
             </h4>
@@ -234,14 +233,14 @@ export default function SecurityEducation() {
                 return (
                   <div
                     key={topic.name}
-                    className="flex items-center gap-3 rounded-md bg-surface-3/30 px-3 py-2.5 hover:bg-surface-3/60 transition-colors"
+                    className="flex items-center gap-3 rounded-md bg-surface px-3 py-2.5 hover:bg-surface-2 transition-colors"
                   >
                     <span className="text-[10px] font-mono text-muted w-5 text-right">{String(i + 1).padStart(2, "0")}</span>
                     <div className={`w-5 h-5 rounded flex items-center justify-center ${ti.color}`}>
                       {ti.icon}
                     </div>
                     <span className="text-sm text-foreground flex-1">{topic.name}</span>
-                    <span className={`text-[10px] font-mono ${ti.color} bg-surface-3 px-1.5 py-0.5 rounded`}>
+                    <span className={`text-[10px] font-mono ${ti.color} bg-surface-2 px-1.5 py-0.5 rounded`}>
                       {ti.label.toUpperCase()}
                     </span>
                   </div>
@@ -262,9 +261,9 @@ export default function SecurityEducation() {
           </div>
         </div>
 
-        <div className="rounded-lg border border-green/20 bg-green/5 p-4 mt-4">
+        <div className="rounded-xl border border-primary/10 bg-primary/5 p-4 mt-4">
           <p className="text-xs text-muted leading-relaxed">
-            <span className="text-green font-mono font-bold">EDU:</span> All training content is
+            <span className="text-primary font-semibold">NOTE:</span> All training content is
             customized to your industry, tech stack, and compliance requirements. Completion is
             tracked per user and mapped to your framework evidence requirements — training records
             your auditor will actually accept.

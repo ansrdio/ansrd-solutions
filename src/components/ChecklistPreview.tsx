@@ -138,29 +138,27 @@ export default function ChecklistPreview() {
   const progressPercent = Math.round((completedCount / totalCount) * 100);
 
   return (
-    <section id="preview" className="py-12 sm:py-16 border-b border-border/50 relative">
-      <div className="absolute inset-0 cyber-grid opacity-50" />
+    <section id="preview" className="py-16 sm:py-24 relative">
       <div className="relative mx-auto max-w-6xl px-6">
-        <div className="max-w-2xl mb-6">
-          <span className="inline-block text-xs font-mono text-green tracking-wider uppercase mb-3">
-            // live_demo.interactive
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="inline-block text-sm font-semibold text-green bg-green/10 px-4 py-1.5 rounded-full mb-6">
+            Interactive Demo
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
             Try the implementation system
           </h2>
-          <p className="text-muted leading-relaxed">
+          <p className="text-muted leading-relaxed text-lg">
             This is a working example of how we structure security actions. Click the
-            checkboxes, expand items to see runbooks and evidence requirements. This is
-            what your team actually works from.
+            checkboxes, expand items to see runbooks and evidence requirements.
           </p>
         </div>
 
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto">
           {/* Progress dashboard */}
-          <div className="mb-6 p-5 glow-border rounded-lg bg-surface-2">
+          <div className="mb-6 p-5 rounded-2xl bg-white shadow-soft border border-border/50">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-3">
-                <div className={`w-3 h-3 rounded-full ${completedCount === totalCount ? "bg-green animate-pulse" : "bg-accent animate-pulse"}`} />
+                <div className={`w-3 h-3 rounded-full ${completedCount === totalCount ? "bg-green animate-pulse" : "bg-primary animate-pulse"}`} />
                 <span className="text-sm font-medium text-foreground">
                   Implementation Progress
                 </span>
@@ -169,14 +167,14 @@ export default function ChecklistPreview() {
                 <span className="text-sm text-muted font-mono">
                   {completedCount}/{totalCount}
                 </span>
-                <span className={`text-sm font-mono font-bold ${completedCount === totalCount ? "text-green text-glow-green" : "text-accent"}`}>
+                <span className={`text-sm font-mono font-bold ${completedCount === totalCount ? "text-green" : "text-primary"}`}>
                   {progressPercent}%
                 </span>
               </div>
             </div>
             <div className="w-full h-2 bg-surface-3 rounded-full overflow-hidden">
               <div
-                className={`h-full rounded-full transition-all duration-700 ease-out ${completedCount === totalCount ? "bg-green shadow-[0_0_10px_rgba(0,255,136,0.5)]" : "bg-accent shadow-[0_0_10px_rgba(0,229,255,0.3)]"}`}
+                className={`h-full rounded-full transition-all duration-700 ease-out ${completedCount === totalCount ? "bg-green" : "bg-primary"}`}
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
@@ -202,8 +200,8 @@ export default function ChecklistPreview() {
                   key={item.id}
                   className={`rounded-lg transition-all duration-300 ${
                     isCompleted
-                      ? "glow-border-green bg-green-light"
-                      : "border border-border/50 bg-surface-2 hover:border-accent/20"
+                      ? "border border-green/30 bg-green/5"
+                      : "border border-border/50 bg-white shadow-soft hover:border-primary/20"
                   }`}
                 >
                   {/* Main row */}
@@ -212,13 +210,13 @@ export default function ChecklistPreview() {
                       onClick={(e) => { e.stopPropagation(); toggleComplete(item.id); }}
                       className={`flex-shrink-0 mt-0.5 w-5 h-5 rounded border-2 flex items-center justify-center transition-all duration-300 ${
                         isCompleted
-                          ? "bg-green border-green shadow-[0_0_8px_rgba(0,255,136,0.4)]"
-                          : "border-border hover:border-accent"
+                          ? "bg-green border-green"
+                          : "border-border hover:border-primary"
                       }`}
                       aria-label={`Mark "${item.title}" as ${isCompleted ? "incomplete" : "complete"}`}
                     >
                       {isCompleted && (
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="text-background">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="text-white">
                           <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       )}
@@ -257,7 +255,7 @@ export default function ChecklistPreview() {
                   {isExpanded && (
                     <div className="px-4 pb-5 ml-8 space-y-4 border-t border-border/30 pt-4">
                       <div>
-                        <h4 className="text-[10px] font-mono font-bold text-accent uppercase tracking-widest mb-2 flex items-center gap-2">
+                        <h4 className="text-[10px] font-mono font-bold text-primary uppercase tracking-widest mb-2 flex items-center gap-2">
                           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                             <path d="M1 6h10M6 1v10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                           </svg>
@@ -269,7 +267,7 @@ export default function ChecklistPreview() {
                         <div className="space-y-1.5">
                           {item.steps.map((step, i) => (
                             <div key={i} className="flex items-start gap-2 text-sm">
-                              <span className="flex-shrink-0 w-5 h-5 rounded bg-surface-3 flex items-center justify-center text-[10px] font-mono text-accent mt-0.5">
+                              <span className="flex-shrink-0 w-5 h-5 rounded bg-primary/10 flex items-center justify-center text-[10px] font-mono text-primary mt-0.5">
                                 {i + 1}
                               </span>
                               <span className="text-foreground/80">{step}</span>
@@ -285,14 +283,14 @@ export default function ChecklistPreview() {
                           </svg>
                           EVIDENCE REQUIRED
                         </h4>
-                        <div className="text-sm text-foreground/80 font-mono bg-surface-3/80 rounded-md px-4 py-3 border border-border/30">
-                          <span className="text-green/60 select-none">$ </span>{item.evidence}
+                        <div className="text-sm text-foreground/80 font-mono bg-surface rounded-md px-4 py-3 border border-border/30">
+                          <span className="text-green select-none">$ </span>{item.evidence}
                         </div>
                       </div>
 
                       <div className="flex items-center gap-2 pt-1">
                         <span className="text-[10px] font-mono text-muted uppercase tracking-widest">Framework:</span>
-                        <span className="text-xs font-mono text-accent/70">{item.framework}</span>
+                        <span className="text-xs font-mono text-primary">{item.framework}</span>
                       </div>
                     </div>
                   )}
@@ -302,9 +300,9 @@ export default function ChecklistPreview() {
           </div>
 
           {/* Summary note */}
-          <div className="mt-6 p-4 glow-border rounded-lg bg-accent/5">
+          <div className="mt-6 p-4 rounded-xl bg-primary/5 border border-primary/10">
             <p className="text-sm text-foreground/80 leading-relaxed">
-              <span className="text-accent font-mono font-bold">NOTE:</span> This is a sample checklist.
+              <span className="text-primary font-semibold">NOTE:</span> This is a sample checklist.
               Your actual implementation plan is tailored to your infrastructure, risk profile, and
               target framework. Every control includes vendor-specific runbooks and evidence templates.
             </p>
