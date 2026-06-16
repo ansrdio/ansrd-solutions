@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Awareness from "@/components/Awareness";
 
 export const metadata: Metadata = {
-  title: "Awareness Campaign | ANSRD Solutions",
+  title: "Behavioural Awareness | ANSRD Solutions",
   description:
-    "Cybersecurity awareness campaigns delivered across Nigeria — reaching schools and communities with practical security education to build lasting behavioural change.",
+    "Hands-on behavioural awareness campaigns that change security habits — not just knowledge. Reaching schools and communities across Nigeria with the Pause, Inspect, Proceed framework.",
 };
 
 export default function AwarenessPage() {

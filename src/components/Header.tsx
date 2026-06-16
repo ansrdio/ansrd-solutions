@@ -31,9 +31,6 @@ export default function Header() {
           <Link href="/roadmap" className="text-muted hover:text-primary font-medium transition-colors">
             Roadmap
           </Link>
-          <Link href="/onsite-training" className="text-muted hover:text-primary font-medium transition-colors">
-            On-Site Training
-          </Link>
           <Link href="/awareness" className="text-muted hover:text-primary font-medium transition-colors">
             Awareness
           </Link>
@@ -78,9 +75,6 @@ export default function Header() {
           </Link>
           <Link href="/roadmap" onClick={() => setMobileOpen(false)} className="block text-muted hover:text-primary font-medium py-2 transition-colors">
             Roadmap
-          </Link>
-          <Link href="/onsite-training" onClick={() => setMobileOpen(false)} className="block text-muted hover:text-primary font-medium py-2 transition-colors">
-            On-Site Training
           </Link>
           <Link href="/awareness" onClick={() => setMobileOpen(false)} className="block text-muted hover:text-primary font-medium py-2 transition-colors">
             Awareness
