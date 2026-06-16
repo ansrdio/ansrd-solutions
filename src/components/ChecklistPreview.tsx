@@ -307,6 +307,16 @@ export default function ChecklistPreview() {
               target framework. Every control includes vendor-specific runbooks and evidence templates.
             </p>
           </div>
+
+          {/* CTA */}
+          <div className="mt-8 text-center">
+            <a
+              href="/contact?framework=cyber-essentials"
+              className="inline-flex items-center justify-center gap-2 gradient-cta text-white px-8 py-3.5 rounded-full font-semibold text-base hover:opacity-90 transition-all shadow-glow-primary"
+            >
+              Get your tailored implementation checklist
+            </a>
+          </div>
         </div>
       </div>
     </section>

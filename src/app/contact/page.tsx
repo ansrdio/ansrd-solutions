@@ -5,6 +5,11 @@ export const metadata = {
   description: "Tell us about your business and get a prioritized cybersecurity implementation plan.",
 };
 
-export default function ContactPage() {
-  return <Contact />;
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ framework?: string }>;
+}) {
+  const { framework } = await searchParams;
+  return <Contact defaultFramework={framework} />;
 }

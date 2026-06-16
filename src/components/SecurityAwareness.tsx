@@ -73,9 +73,9 @@ export default function SecurityAwareness() {
           <span className="inline-block text-sm font-semibold text-amber bg-amber/10 px-4 py-1.5 rounded-full mb-6">
             Behavioural Intelligence
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-            Security behaviours you can see and shape
-          </h2>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
+            Behavioural security training
+          </h1>
           <p className="text-muted leading-relaxed text-lg">
             Not a course catalogue — a live behavioural feedback system. We measure how your
             people actually respond to threats, then adapt interventions in real time to reinforce
@@ -84,8 +84,10 @@ export default function SecurityAwareness() {
         </div>
 
         {/* View switcher */}
-        <div className="flex gap-2 mb-8">
+        <div className="flex gap-2 mb-8" role="tablist" aria-label="Training view">
           <button
+            role="tab"
+            aria-selected={view === "dashboard"}
             onClick={() => setView("dashboard")}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
               view === "dashboard"
@@ -96,6 +98,8 @@ export default function SecurityAwareness() {
             Behaviour Signals
           </button>
           <button
+            role="tab"
+            aria-selected={view === "adaptive"}
             onClick={() => setView("adaptive")}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
               view === "adaptive"

@@ -78,9 +78,9 @@ export default function AutomationRoadmap() {
           <span className="inline-block text-sm font-semibold text-green bg-green/10 px-4 py-1.5 rounded-full mb-6">
             Engine Evolution
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-            From guided implementation to full governance automation
-          </h2>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
+            Implementation roadmap
+          </h1>
           <p className="text-muted leading-relaxed text-lg">
             The engine evolves. Today: behaviour-guided workflows. Tomorrow: autonomous compliance
             orchestration with behavioural telemetry and adaptive decision-support.

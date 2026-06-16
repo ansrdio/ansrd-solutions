@@ -14,10 +14,26 @@ export default function Footer() {
                 ANSRD
               </span>
             </div>
-            <p className="text-sm text-white/60 max-w-xs leading-relaxed">
-              A behaviour-driven cybersecurity governance engine — simplifying security
+            <p className="text-sm text-white/60 max-w-xs leading-relaxed mb-4">
+              Behaviour-driven cybersecurity governance — simplifying security
               for underserved organisations through human-risk reduction and guided implementation.
             </p>
+            <div className="space-y-1 text-sm">
+              <a
+                href="mailto:hello@ansrdsolutions.com"
+                className="block text-white/70 hover:text-white transition-colors"
+              >
+                {/* TODO: [CONTACT EMAIL] */}hello@ansrdsolutions.com
+              </a>
+              <a
+                href="https://linkedin.com/company/ansrd"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-white/70 hover:text-white transition-colors"
+              >
+                {/* TODO: [LINKEDIN URL] */}LinkedIn
+              </a>
+            </div>
           </div>
 
           <div>
@@ -44,6 +60,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/awareness" className="text-white/70 hover:text-white transition-colors">
+                  Awareness
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="text-white/70 hover:text-white transition-colors">
                   Contact
                 </Link>
@@ -54,40 +75,84 @@ export default function Footer() {
           <div>
             <h4 className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-4">Frameworks</h4>
             <ul className="space-y-3 text-sm">
-              <li className="text-white/70">Cyber Essentials</li>
-              <li className="text-white/70">ISO 27001:2022</li>
-              <li className="text-white/70">NIST CSF 2.0</li>
-              <li className="text-white/70">SOC 2 Type II</li>
-              <li className="text-white/70">CIS Controls v8</li>
-              <li className="text-white/70">PCI DSS 4.0</li>
-              <li className="text-white/70">UK GDPR</li>
+              <li>
+                <Link href="/frameworks" className="text-white/70 hover:text-white transition-colors">
+                  Cyber Essentials
+                </Link>
+              </li>
+              <li>
+                <Link href="/frameworks" className="text-white/70 hover:text-white transition-colors">
+                  ISO 27001:2022
+                </Link>
+              </li>
+              <li>
+                <Link href="/frameworks" className="text-white/70 hover:text-white transition-colors">
+                  NIST CSF 2.0
+                </Link>
+              </li>
+              <li>
+                <Link href="/frameworks" className="text-white/70 hover:text-white transition-colors">
+                  SOC 2 Type II
+                </Link>
+              </li>
+              <li>
+                <Link href="/frameworks" className="text-white/70 hover:text-white transition-colors">
+                  CIS Controls v8
+                </Link>
+              </li>
+              <li>
+                <Link href="/frameworks" className="text-white/70 hover:text-white transition-colors">
+                  UK GDPR
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-4">Platform</h4>
+            <h4 className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-4">Engagement</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-green" />
-                <span className="text-white/70">Guided Implementation</span>
+                <Link href="/services" className="text-white/70 hover:text-white transition-colors">
+                  Guided Implementation
+                </Link>
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-primary-light" />
-                <span className="text-white/70">Assisted Automation</span>
+                <Link href="/roadmap" className="text-white/70 hover:text-white transition-colors">
+                  Assisted Automation
+                </Link>
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-white/30" />
-                <span className="text-white/70">Full Automation</span>
+                <Link href="/roadmap" className="text-white/70 hover:text-white transition-colors">
+                  Full Automation
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <div className="text-sm text-white/40">
+        {/* Legal links */}
+        <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap gap-6 text-sm">
+          <Link href="/privacy" className="text-white/50 hover:text-white transition-colors">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="text-white/50 hover:text-white transition-colors">
+            Terms of Service
+          </Link>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-6 pt-4 border-t border-white/5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+          <div className="text-xs text-white/40 leading-relaxed">
             &copy; {new Date().getFullYear()} ANSRD Solutions Ltd. All rights reserved.
+            <br className="sm:hidden" />
+            <span className="hidden sm:inline"> · </span>
+            {/* TODO: [COMPANY NUMBER] and [REGISTERED ADDRESS] */}
+            Company No. [COMPANY NUMBER] · Registered office: [REGISTERED ADDRESS]
           </div>
-          <div className="text-sm text-white/30">
+          <div className="text-xs text-white/30">
             Structured Security for Growing Businesses
           </div>
         </div>

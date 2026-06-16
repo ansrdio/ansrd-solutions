@@ -229,10 +229,10 @@ export default function ThreatAssessment() {
 
               <div className="flex gap-3">
                 <a
-                  href="#contact"
+                  href={`/contact?framework=${totalScore <= 5 ? "cyber-essentials" : totalScore <= 10 ? "iso-27001" : "nist-csf"}`}
                   className="inline-flex items-center justify-center gap-2 gradient-cta text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all shadow-glow-primary"
                 >
-                  Get your action plan
+                  Get your prioritized first steps
                 </a>
                 <button
                   onClick={reset}

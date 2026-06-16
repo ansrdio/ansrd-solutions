@@ -5,14 +5,15 @@ import { useCountUp } from "@/hooks/useCountUp";
 
 interface StatCardProps {
   value: number;
+  prefix?: string;
   suffix?: string;
   label: string;
-  sublabel: string;
+  source: string;
   color: "primary" | "red" | "green" | "amber";
   started: boolean;
 }
 
-function StatCard({ value, suffix, label, sublabel, color, started }: StatCardProps) {
+function StatCard({ value, prefix, suffix, label, source, color, started }: StatCardProps) {
   const count = useCountUp(value, 2000, started);
 
   const colorMap = {
@@ -25,10 +26,10 @@ function StatCard({ value, suffix, label, sublabel, color, started }: StatCardPr
   return (
     <div className="text-center p-6 rounded-2xl bg-white shadow-soft border border-border/50 hover:shadow-glow-primary/30 transition-all duration-300">
       <div className={`text-4xl sm:text-5xl font-bold ${colorMap[color]} mb-2`}>
-        {count}{suffix}
+        {prefix}{count}{suffix}
       </div>
       <div className="text-foreground font-semibold text-sm mb-1">{label}</div>
-      <div className="text-muted text-xs">{sublabel}</div>
+      <div className="text-muted text-[11px] mt-2 italic">{source}</div>
     </div>
   );
 }
@@ -40,29 +41,30 @@ export default function Stats() {
     {
       value: 43,
       suffix: "%",
-      label: "of cyberattacks target SMBs",
-      sublabel: "Verizon DBIR 2024",
+      label: "of all cyberattacks target small businesses",
+      source: "Verizon DBIR",
       color: "red" as const,
     },
     {
-      value: 60,
+      value: 88,
       suffix: "%",
-      label: "of SMBs close within 6 months of a breach",
-      sublabel: "National Cyber Security Alliance",
+      label: "of SMB breaches involve ransomware",
+      source: "Verizon DBIR 2025",
       color: "amber" as const,
     },
     {
-      value: 77,
+      value: 68,
       suffix: "%",
-      label: "lack an incident response plan",
-      sublabel: "IBM Security Report",
+      label: "of breaches involve a human element",
+      source: "Verizon DBIR 2024",
       color: "primary" as const,
     },
     {
-      value: 95,
-      suffix: "%",
-      label: "of breaches caused by human error",
-      sublabel: "World Economic Forum",
+      prefix: "$",
+      value: 3.31,
+      suffix: "M",
+      label: "average breach cost for businesses under 500 employees",
+      source: "IBM Cost of a Data Breach",
       color: "green" as const,
     },
   ];

@@ -177,9 +177,9 @@ export default function FrameworkComparison() {
           <span className="inline-block text-sm font-semibold text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6">
             Frameworks
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-            We work with the frameworks you need
-          </h2>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
+            Frameworks we make executable
+          </h1>
           <p className="text-muted leading-relaxed text-lg">
             Select a framework to see how we map it into actionable controls. Every framework
             gets the same treatment: broken down, prioritized, and made executable.
@@ -187,10 +187,12 @@ export default function FrameworkComparison() {
         </div>
 
         {/* Tab switcher */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap gap-2 mb-6" role="tablist" aria-label="Framework selector">
           {frameworks.map((f) => (
             <button
               key={f.id}
+              role="tab"
+              aria-selected={active === f.id}
               onClick={() => setActive(f.id)}
               className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                 active === f.id

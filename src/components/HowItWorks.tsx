@@ -37,9 +37,9 @@ export default function HowItWorks() {
           <span className="inline-block text-sm font-semibold text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6">
             How It Works
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-            The Behaviour-Driven Implementation Engine
-          </h2>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
+            How the implementation system works
+          </h1>
           <p className="text-muted leading-relaxed text-lg">
             Our engine operationalises compliance through behavioural workflows —
             each phase reduces human-risk and builds sustainable security culture.

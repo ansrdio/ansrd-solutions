@@ -56,8 +56,8 @@ const features = [
     ),
   },
   {
-    title: "Governance Automation",
-    description: "Behavioural telemetry and automated checks ensure controls stay embedded in your organisation\'s daily operations.",
+    title: "Continuous Governance",
+    description: "Ongoing checks and evidence collection ensure controls stay embedded in your organisation\'s daily operations — automation on the roadmap.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -66,23 +66,16 @@ const features = [
   },
 ];
 
-const testimonials = [
-  {
-    quote: "ANSRD gave us a clear, prioritized path to Cyber Essentials certification. No confusion, no wasted time — just the steps we needed.",
-    name: "Sarah M.",
-    role: "IT Manager, London",
-  },
-  {
-    quote: "We went from zero security posture to ISO 27001-ready in under 6 months. The runbooks made it possible without hiring a CISO.",
-    name: "James T.",
-    role: "CTO, SaaS Startup",
-  },
-  {
-    quote: "The phishing simulations were eye-opening. Our click rate dropped from 23% to under 4% in three months.",
-    name: "Priya K.",
-    role: "Operations Director, Manchester",
-  },
-];
+// TODO: reinstate testimonials when real, attributable quotes (full name, company,
+// optional logo/LinkedIn) are available
+// type Testimonial = {
+//   quote: string;
+//   name: string;        // full name
+//   role: string;
+//   company: string;     // real company name
+//   logoUrl?: string;
+//   linkUrl?: string;    // LinkedIn or company site
+// };
 
 export default function Home() {
   return (
@@ -95,24 +88,24 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="inline-block text-sm font-semibold text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6">
-              The Engine
+              Our Approach
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-              Behaviour-Driven Governance — From Risk to Resilience
+              From risk assessment to certification — guided every step
             </h2>
             <p className="text-muted leading-relaxed text-lg">
-              Our engine studies human-risk patterns, guides decision-making, and automates governance actions to build sustainable security culture.
+              A structured implementation system that maps your human-risk patterns, prioritises what matters, and walks your team through each control — with evidence templates your auditor will accept.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { num: "1", title: "Human-Risk Assessment", desc: "We model behavioural risk across your organisation and identify where human error creates the most exposure." },
-              { num: "2", title: "Behavioural Prioritisation", desc: "Risk-prioritised implementation pathways sequenced for maximum impact on non-technical teams." },
-              { num: "3", title: "Guided Implementation", desc: "Behaviour-guided workflows reduce decision fatigue and human error during security operations." },
-              { num: "4", title: "Behavioural Reinforcement", desc: "Adaptive awareness modules build lasting security habits through micro-learning and simulations." },
-              { num: "5", title: "Governance Automation", desc: "Automated compliance workflows, drift detection, and behavioural telemetry keep your posture self-sustaining." },
-              { num: "6", title: "Scale & Certify", desc: "Evidence packages ready for auditors. The engine scales across frameworks as your organisation grows." },
+              { num: "1", title: "Risk Assessment", desc: "We map your current posture, identify human-risk patterns, and baseline your organisation against target frameworks." },
+              { num: "2", title: "Prioritised Roadmap", desc: "A sequenced implementation plan that tackles highest-impact controls first — designed for non-technical teams." },
+              { num: "3", title: "Guided Implementation", desc: "Step-by-step runbooks and workflows reduce decision fatigue so your team can execute without guesswork." },
+              { num: "4", title: "Awareness & Habits", desc: "Targeted training that builds lasting security behaviours through micro-learning and phishing simulations." },
+              { num: "5", title: "Evidence & Audit-Readiness", desc: "Continuous evidence collection mapped to framework requirements — always audit-ready, not last-minute scrambles." },
+              { num: "6", title: "Scale & Certify", desc: "Once certified, expand to additional frameworks as your organisation grows. All documentation transfers." },
             ].map((step) => (
               <div key={step.num} className="p-6 rounded-2xl bg-white shadow-soft border border-border/50 hover:shadow-glow-primary/20 transition-all duration-300 group">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
@@ -131,10 +124,10 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="inline-block text-sm font-semibold text-accent bg-accent/10 px-4 py-1.5 rounded-full mb-6">
-              Platform Capabilities
+              What You Get
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-              Implementation Intelligence — Purpose-Built for SMEs
+              Everything an SME needs to get — and stay — secure
             </h2>
           </div>
 
@@ -184,37 +177,32 @@ export default function Home() {
 
       <Stats />
 
-      {/* Testimonials */}
+      {/* Credibility — Framework Alignment */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="inline-block text-sm font-semibold text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6">
-              What clients are saying
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
-              Trusted by Growing Businesses
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
+              Aligned to the frameworks that matter
             </h2>
+            <p className="text-muted leading-relaxed text-lg">
+              Every implementation we deliver maps directly to recognised security frameworks
+              — so your investment produces audit-ready evidence, not just a report.
+            </p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div
-                key={t.name}
-                className="p-6 rounded-2xl bg-white shadow-soft border border-border/50 hover:shadow-glow-primary/20 transition-all duration-300"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" strokeWidth="1">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                  ))}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              { abbr: "CE", name: "Cyber Essentials" },
+              { abbr: "ISO", name: "ISO 27001:2022" },
+              { abbr: "NIST", name: "NIST CSF 2.0" },
+              { abbr: "SOC", name: "SOC 2 Type II" },
+              { abbr: "CIS", name: "CIS Controls v8" },
+              { abbr: "GDPR", name: "UK GDPR" },
+            ].map((fw) => (
+              <div key={fw.abbr} className="flex flex-col items-center gap-2 p-5 rounded-xl bg-white shadow-soft border border-border/50">
+                <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-primary font-bold text-xs">{fw.abbr}</span>
                 </div>
-                <p className="text-foreground leading-relaxed mb-4 text-sm italic">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div>
-                  <div className="font-semibold text-foreground text-sm">{t.name}</div>
-                  <div className="text-muted text-xs">{t.role}</div>
-                </div>
+                <span className="text-xs text-muted font-medium text-center">{fw.name}</span>
               </div>
             ))}
           </div>

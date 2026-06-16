@@ -48,7 +48,8 @@ export default function Header() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden p-2 text-muted hover:text-foreground transition-colors"
-          aria-label="Toggle menu"
+          aria-label="Toggle navigation menu"
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

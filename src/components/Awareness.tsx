@@ -79,11 +79,15 @@ export default function Awareness() {
               Behaviours at the Source
             </span>
           </h1>
-          <p className="text-lg sm:text-xl text-muted leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted leading-relaxed max-w-3xl mx-auto mb-4">
             Most breaches start with a human decision. Our awareness campaigns go beyond slides and 
             lectures — we use hands-on behavioural exercises to build lasting security habits in
             schools and communities across Nigeria. The goal isn&apos;t just knowledge — it&apos;s
             measurable behaviour change.
+          </p>
+          <p className="text-sm text-muted/80 max-w-2xl mx-auto">
+            Our community awareness work in Nigeria applies the same behaviour-change methodology
+            we use in our SME engagements — security habits, not slideware.
           </p>
         </div>
       </section>
@@ -140,11 +144,12 @@ export default function Awareness() {
       <section className="py-12">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            {/* TODO: replace with real measured metrics when available */}
             {[
-              { value: "500+", label: "Behaviours Changed" },
               { value: "6", label: "Schools Reached" },
+              { value: "200+", label: "Students Trained" },
               { value: "3", label: "Community Events" },
-              { value: "2024", label: "Campaign Year" },
+              { value: "2024–25", label: "Campaign Period" },
             ].map((stat) => (
               <div key={stat.label} className="text-center p-6 rounded-2xl bg-white shadow-soft border border-border/50">
                 <div className="text-3xl sm:text-4xl font-bold text-primary mb-1">{stat.value}</div>
@@ -180,7 +185,10 @@ export default function Awareness() {
                   alt={image.alt}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 50vw, 25vw"
+                  sizes={image.span.includes("col-span-2")
+                    ? "(max-width: 768px) 100vw, 50vw"
+                    : "(max-width: 768px) 50vw, 25vw"
+                  }
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
