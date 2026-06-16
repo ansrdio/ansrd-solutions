@@ -2,31 +2,31 @@ export default function HowItWorks() {
   const steps = [
     {
       number: "01",
-      title: "Scan & Assess",
+      title: "Human-Risk Modelling",
       description:
-        "A focused review of your current security posture. We map your systems, identify gaps, and baseline your maturity against target frameworks.",
-      output: "Gap analysis report",
+        "We map behavioural risk patterns across your organisation — identifying where human error creates the most exposure and prioritising accordingly.",
+      output: "Behavioural risk profile",
     },
     {
       number: "02",
-      title: "Prioritize & Plan",
+      title: "Behaviour-Guided Pathways",
       description:
-        "We generate a prioritized checklist — not a 200-page report. A small set of high-impact controls in the right order, mapped to your chosen framework.",
-      output: "Prioritized action plan",
+        "Risk-prioritised implementation pathways that reduce decision fatigue. Each step is designed for non-technical teams to execute without guesswork.",
+      output: "Implementation intelligence",
     },
     {
       number: "03",
-      title: "Implement & Evidence",
+      title: "Workflow Orchestration",
       description:
-        "Each control has a step-by-step runbook: what to configure, which settings to change, and exactly what evidence to capture (screenshots, logs, exports).",
+        "Behaviour-guided workflows that reduce human error during operations. Clear actions, evidence capture, and governance checkpoints built in.",
       output: "Verified controls + evidence",
     },
     {
       number: "04",
-      title: "Verify & Automate",
+      title: "Governance Automation",
       description:
-        "Once controls are in place, we help you set up continuous monitoring and automated checks. Your security posture becomes self-sustaining, not a one-off project.",
-      output: "Automated compliance",
+        "Behavioural telemetry, adaptive reinforcement, and automated compliance checks make your security posture self-sustaining and audit-ready.",
+      output: "Continuous governance",
     },
   ];
 
@@ -38,11 +38,11 @@ export default function HowItWorks() {
             How It Works
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-            From framework to done — in four phases
+            The Behaviour-Driven Implementation Engine
           </h2>
           <p className="text-muted leading-relaxed text-lg">
-            We take recognized security frameworks and compile them into a structured
-            implementation pipeline. Each phase builds on the last.
+            Our engine operationalises compliance through behavioural workflows —
+            each phase reduces human-risk and builds sustainable security culture.
           </p>
         </div>
 

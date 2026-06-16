@@ -103,14 +103,14 @@ export default function SecurityAwareness() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="inline-block text-sm font-semibold text-amber bg-amber/10 px-4 py-1.5 rounded-full mb-6">
-            Security Awareness
+            Behavioural Reinforcement
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-            Your people are the first line of defense
+            Adaptive awareness that changes security habits
           </h2>
           <p className="text-muted leading-relaxed text-lg">
-            95% of breaches involve human error. We run continuous awareness programs —
-            phishing simulations, bite-sized training modules, and measurable behavior change.
+            Micro-learning and behavioural reinforcement modules designed to improve
+            long-term security habits — not a once-a-year compliance checkbox.
           </p>
         </div>
 

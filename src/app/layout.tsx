@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ANSRD Solutions — Cybersecurity Implementation for SMBs",
+  title: "ANSRD Solutions — Behaviour-Driven Cybersecurity Governance Engine",
   description:
-    "A structured implementation system that helps small and medium businesses actually get cybersecurity done. Clear actions, prioritized steps, practical guidance.",
+    "A behaviour-driven cybersecurity governance and implementation engine designed to help SMEs operationalise security frameworks through guided implementation, human-risk reduction, and simplified compliance workflows.",
 };
 
 export default function RootLayout({

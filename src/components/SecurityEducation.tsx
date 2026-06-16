@@ -155,14 +155,14 @@ export default function SecurityEducation() {
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="inline-block text-sm font-semibold text-green bg-green/10 px-4 py-1.5 rounded-full mb-6">
-            Education Paths
+            Adaptive Learning Pathways
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-            Structured security education
+            Decision-support through structured education
           </h2>
           <p className="text-muted leading-relaxed text-lg">
-            Role-based learning paths that build real security competence across your organization.
-            From frontline staff to leadership — everyone gets the knowledge they need.
+            Role-based learning pathways that guide decision-making, reinforce security behaviours,
+            and build measurable competence across your organisation.
           </p>
         </div>
 

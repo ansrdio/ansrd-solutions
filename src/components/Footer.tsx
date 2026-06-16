@@ -15,8 +15,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-white/60 max-w-xs leading-relaxed">
-              Structured cybersecurity implementation for small and medium businesses.
-              From framework to done.
+              A behaviour-driven cybersecurity governance engine — simplifying security
+              for underserved organisations through human-risk reduction and guided implementation.
             </p>
           </div>
 

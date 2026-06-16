@@ -1,10 +1,10 @@
 export default function Problem() {
   const problems = [
-    "No structured implementation plan",
-    "Frameworks with hundreds of controls and no priority",
-    "Decisions based on guesswork, not risk data",
-    "No evidence trail for auditors",
-    "Security treated as a one-off project, not a process",
+    "Human error causes 95% of breaches — yet most programmes ignore behaviour",
+    "Frameworks designed for enterprises, not the teams that actually do the work",
+    "Decisions based on guesswork, not human-risk modelling",
+    "No behavioural feedback loop — training happens once and is forgotten",
+    "Compliance treated as a checkbox, not a sustainable culture shift",
   ];
 
   return (
@@ -16,12 +16,12 @@ export default function Problem() {
               The Problem
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-6 leading-tight">
-              The Real Reason Most SMBs Fail at Security
+              Security Fails When It Ignores Human Behaviour
             </h2>
             <p className="text-muted leading-relaxed mb-8">
-              Frameworks like Cyber Essentials, ISO 27001, and NIST are valuable — but they
-              weren&apos;t designed for a 20-person company with one IT lead. They&apos;re reference
-              documents, not implementation guides.
+              Most security programmes focus on technology. But breaches happen because of people
+              — the decisions they make, the habits they don&apos;t build, and the processes that
+              never become second nature. Without behavioural change, compliance is just paperwork.
             </p>
           </div>
           <div className="space-y-4">

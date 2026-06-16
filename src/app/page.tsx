@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const features = [
   {
-    title: "Gap Analysis & Assessment",
-    description: "We scan your current security posture, map your systems, identify gaps, and baseline your maturity against target frameworks.",
+    title: "Behavioural Risk Scoring",
+    description: "We assess your human-risk patterns, map behavioural gaps, and baseline organisational security maturity against target frameworks.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="11" cy="11" r="8" />
@@ -15,8 +15,8 @@ const features = [
     ),
   },
   {
-    title: "Prioritized Action Plans",
-    description: "Not a 200-page report. A small set of high-impact controls in the right order, mapped to your chosen framework.",
+    title: "Risk-Prioritised Implementation Pathways",
+    description: "Not a 200-page report. Behaviour-guided pathways that sequence high-impact controls for non-technical teams.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 6h16M4 12h10M4 18h6" />
@@ -24,8 +24,8 @@ const features = [
     ),
   },
   {
-    title: "Step-by-Step Runbooks",
-    description: "Each control has a detailed runbook: what to configure, which settings to change, and exactly what evidence to capture.",
+    title: "Behaviour-Guided Workflows",
+    description: "Implementation workflows designed to reduce human error during cybersecurity operations — clear, guided, and evidence-ready.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 11l3 3L22 4" />
@@ -34,8 +34,8 @@ const features = [
     ),
   },
   {
-    title: "Evidence Collection",
-    description: "Screenshots, logs, exports — we tell your team exactly what counts as proof so audits don't fail on evidence gaps.",
+    title: "Compliance Workflow Orchestration",
+    description: "Automated evidence collection, governance actions, and audit-ready documentation — orchestrated through behavioural workflows.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -46,8 +46,8 @@ const features = [
     ),
   },
   {
-    title: "Security Awareness Training",
-    description: "Phishing simulations, bite-sized modules, and role-based education paths that build real security culture.",
+    title: "Adaptive Awareness Pathways",
+    description: "Micro-learning and behavioural reinforcement modules designed to improve long-term security habits and reduce human-risk.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
@@ -56,8 +56,8 @@ const features = [
     ),
   },
   {
-    title: "Continuous Monitoring",
-    description: "Once controls are in place, automated checks and drift detection keep your security posture self-sustaining.",
+    title: "Governance Automation",
+    description: "Behavioural telemetry and automated checks ensure controls stay embedded in your organisation\'s daily operations.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -95,24 +95,24 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="inline-block text-sm font-semibold text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6">
-              The Solution
+              The Engine
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-              Your Cybersecurity Implementation System — Structured & Clear
+              Behaviour-Driven Governance — From Risk to Resilience
             </h2>
             <p className="text-muted leading-relaxed text-lg">
-              Plain, simple, effective. Here&apos;s how ANSRD works for your business.
+              Our engine studies human-risk patterns, guides decision-making, and automates governance actions to build sustainable security culture.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { num: "1", title: "Scan & Assess", desc: "We review your current posture and map gaps against your target framework." },
-              { num: "2", title: "Prioritize & Plan", desc: "You get a prioritized checklist — high-impact controls in the right order." },
-              { num: "3", title: "Implement & Evidence", desc: "Step-by-step runbooks tell your team exactly what to do and what to capture." },
-              { num: "4", title: "Train Your Team", desc: "Phishing simulations and awareness modules build lasting security culture." },
-              { num: "5", title: "Verify & Monitor", desc: "Automated checks ensure controls stay in place and compliance is maintained." },
-              { num: "6", title: "Certify & Scale", desc: "Evidence packages ready for auditors. Scale to additional frameworks as you grow." },
+              { num: "1", title: "Human-Risk Assessment", desc: "We model behavioural risk across your organisation and identify where human error creates the most exposure." },
+              { num: "2", title: "Behavioural Prioritisation", desc: "Risk-prioritised implementation pathways sequenced for maximum impact on non-technical teams." },
+              { num: "3", title: "Guided Implementation", desc: "Behaviour-guided workflows reduce decision fatigue and human error during security operations." },
+              { num: "4", title: "Behavioural Reinforcement", desc: "Adaptive awareness modules build lasting security habits through micro-learning and simulations." },
+              { num: "5", title: "Governance Automation", desc: "Automated compliance workflows, drift detection, and behavioural telemetry keep your posture self-sustaining." },
+              { num: "6", title: "Scale & Certify", desc: "Evidence packages ready for auditors. The engine scales across frameworks as your organisation grows." },
             ].map((step) => (
               <div key={step.num} className="p-6 rounded-2xl bg-white shadow-soft border border-border/50 hover:shadow-glow-primary/20 transition-all duration-300 group">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
@@ -131,10 +131,10 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="inline-block text-sm font-semibold text-accent bg-accent/10 px-4 py-1.5 rounded-full mb-6">
-              Features
+              Platform Capabilities
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-              Everything an SMB Needs — Built In.
+              Implementation Intelligence — Purpose-Built for SMEs
             </h2>
           </div>
 
@@ -160,9 +160,9 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight mb-3">
-              Your Business Security Is Our Priority
+              Framework-Aligned Behavioural Governance
             </h2>
-            <p className="text-muted">Enterprise-grade approach. Always.</p>
+            <p className="text-muted">Operationalising compliance through behaviour-driven workflows.</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {[
@@ -225,10 +225,10 @@ export default function Home() {
       <section className="py-16 sm:py-24 gradient-hero">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-6">
-            Ready to secure your business?
+            Ready to operationalise your security?
           </h2>
           <p className="text-muted text-lg mb-8 leading-relaxed">
-            Get a prioritized implementation plan tailored to your business. No sales pitch. Just your first steps.
+            Get a behaviour-driven implementation plan tailored to your organisation. No sales pitch — just your risk-prioritised first steps.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

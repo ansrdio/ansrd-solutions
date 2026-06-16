@@ -12,21 +12,21 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 border border-primary/20 shadow-soft mb-8">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-sm font-medium text-primary">
-              Cybersecurity Implementation System
+              Behaviour-Driven Cyber Governance Engine
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] tracking-tight mb-6">
-            Secure Your Business With{" "}
+            Operationalise Security Through{" "}
             <span className="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
-              Structured Implementation
+              Behaviour-Driven Implementation
             </span>
-            {" "}&mdash; No Guesswork.
           </h1>
 
           <p className="text-lg sm:text-xl text-muted leading-relaxed mb-10 max-w-2xl mx-auto">
-            We translate frameworks like Cyber Essentials, ISO 27001, and NIST into
-            prioritized, executable actions — giving you the clarity to actually get security done.
+            We help SMEs reduce human-risk patterns and operationalise compliance through
+            guided implementation workflows, behavioural reinforcement, and governance automation
+            — turning frameworks into sustainable security culture.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

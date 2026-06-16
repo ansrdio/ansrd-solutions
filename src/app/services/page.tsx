@@ -4,7 +4,7 @@ import NotThis from "@/components/NotThis";
 
 export const metadata = {
   title: "Services — ANSRD Solutions",
-  description: "Structured cybersecurity implementation: from framework to done in four phases.",
+  description: "Behaviour-driven implementation engine: human-risk modelling, guided workflows, and governance automation for SMEs.",
 };
 
 export default function ServicesPage() {
