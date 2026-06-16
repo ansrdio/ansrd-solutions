@@ -39,7 +39,7 @@ const galleryImages = [
   },
   {
     src: "/awareness-campaign/20251115_113404.jpg",
-    alt: "Keynote at Rotary Club event — scaling behavioural awareness beyond schools",
+    alt: "Keynote at Sigma Club event — scaling behavioural awareness beyond schools",
     span: "col-span-2 row-span-2",
   },
   {
@@ -59,7 +59,7 @@ const galleryImages = [
   },
   {
     src: "/awareness-campaign/20251115_132755.jpg",
-    alt: "Conference panel — Cybersecurity Awareness and Introduction to AI for community leaders",
+    alt: "Sigma Club event — Cybersecurity Awareness and Introduction to AI with Sigma executives",
     span: "col-span-2 row-span-1",
   },
 ];
