@@ -2,245 +2,251 @@
 
 import { useState } from "react";
 
-interface Campaign {
-  id: string;
-  name: string;
-  type: "phishing" | "vishing" | "smishing";
-  status: "active" | "completed" | "scheduled";
-  sent: number;
-  clicked: number;
-  reported: number;
-}
-
-const campaigns: Campaign[] = [
-  { id: "1", name: "Invoice Scam Simulation", type: "phishing", status: "completed", sent: 48, clicked: 11, reported: 29 },
-  { id: "2", name: "CEO Impersonation Test", type: "phishing", status: "completed", sent: 48, clicked: 6, reported: 34 },
-  { id: "3", name: "Password Reset Lure", type: "phishing", status: "active", sent: 48, clicked: 3, reported: 38 },
-  { id: "4", name: "Delivery Notification Bait", type: "smishing", status: "scheduled", sent: 0, clicked: 0, reported: 0 },
-];
-
-const modules = [
+const behaviourSignals = [
   {
-    title: "Phishing Recognition",
-    duration: "15 min",
-    difficulty: "Beginner",
-    topics: ["Email red flags", "Link inspection", "Attachment safety", "Reporting process"],
-    completionRate: 87,
-    color: "accent",
-  },
-  {
-    title: "Password Hygiene",
-    duration: "10 min",
-    difficulty: "Beginner",
-    topics: ["Strong passwords", "Password managers", "MFA setup", "Credential sharing risks"],
-    completionRate: 92,
+    label: "Phishing Resilience",
+    score: 78,
+    trend: "up",
+    detail: "3 simulations passed this month",
     color: "green",
   },
   {
-    title: "Social Engineering Defense",
-    duration: "20 min",
-    difficulty: "Intermediate",
-    topics: ["Pretexting", "Tailgating", "Baiting", "Quid pro quo attacks"],
-    completionRate: 64,
-    color: "amber",
-  },
-  {
-    title: "Data Handling & Classification",
-    duration: "12 min",
-    difficulty: "Intermediate",
-    topics: ["Data categories", "Sharing protocols", "Clean desk policy", "Secure disposal"],
-    completionRate: 71,
+    label: "Password Behaviour",
+    score: 64,
+    trend: "up",
+    detail: "MFA adoption increased 12%",
     color: "accent",
   },
   {
-    title: "Incident Reporting",
-    duration: "8 min",
-    difficulty: "Beginner",
-    topics: ["What to report", "How to report", "Escalation paths", "Preservation of evidence"],
-    completionRate: 78,
+    label: "Reporting Speed",
+    score: 82,
+    trend: "up",
+    detail: "Avg. 4 min to flag suspicious emails",
     color: "green",
   },
   {
-    title: "Remote Work Security",
-    duration: "15 min",
-    difficulty: "Intermediate",
-    topics: ["VPN usage", "Public Wi-Fi risks", "Device security", "Home network hardening"],
-    completionRate: 55,
+    label: "Data Handling",
+    score: 51,
+    trend: "down",
+    detail: "2 sensitive file share violations",
     color: "amber",
   },
 ];
 
-const statusStyle = {
-  active: { dot: "bg-green", text: "text-green", label: "LIVE" },
-  completed: { dot: "bg-accent", text: "text-accent", label: "DONE" },
-  scheduled: { dot: "bg-muted", text: "text-muted", label: "QUEUED" },
-};
+const adaptiveRecommendations = [
+  {
+    trigger: "3 staff clicked link in CEO impersonation sim",
+    action: "Authority-bias micro-module queued for Finance team",
+    urgency: "high",
+  },
+  {
+    trigger: "MFA adoption below 80% threshold",
+    action: "Setup-walk-through nudge sent to 12 holdouts",
+    urgency: "medium",
+  },
+  {
+    trigger: "Reporting rate above 70% for 4 consecutive weeks",
+    action: "Increase simulation difficulty → Level 3 pretexting",
+    urgency: "low",
+  },
+  {
+    trigger: "New starter onboarded (3 this week)",
+    action: "Baseline behaviour assessment triggered automatically",
+    urgency: "medium",
+  },
+];
 
-const typeIcon = {
-  phishing: (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-      <polyline points="22,6 12,13 2,6" />
-    </svg>
-  ),
-  vishing: (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-    </svg>
-  ),
-  smishing: (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-    </svg>
-  ),
-};
+const habitStreaks = [
+  { name: "Zero-click streak", value: "18 days", status: "active" },
+  { name: "100% report rate", value: "9 days", status: "active" },
+  { name: "MFA enrollment", value: "92%", status: "threshold" },
+  { name: "Clean desk audit", value: "Last: 3 days ago", status: "active" },
+];
 
 export default function SecurityAwareness() {
-  const [tab, setTab] = useState<"campaigns" | "modules">("modules");
+  const [view, setView] = useState<"dashboard" | "adaptive">("dashboard");
 
   return (
     <section id="awareness" className="py-16 sm:py-24 bg-surface">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="inline-block text-sm font-semibold text-amber bg-amber/10 px-4 py-1.5 rounded-full mb-6">
-            Behavioural Reinforcement
+            Behavioural Intelligence
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-            Adaptive awareness that changes security habits
+            Security behaviours you can see and shape
           </h2>
           <p className="text-muted leading-relaxed text-lg">
-            Micro-learning and behavioural reinforcement modules designed to improve
-            long-term security habits — not a once-a-year compliance checkbox.
+            Not a course catalogue — a live behavioural feedback system. We measure how your
+            people actually respond to threats, then adapt interventions in real time to reinforce
+            the right habits.
           </p>
         </div>
 
-        {/* Tab switcher */}
-        <div className="flex gap-2 mb-6">
+        {/* View switcher */}
+        <div className="flex gap-2 mb-8">
           <button
-            onClick={() => setTab("modules")}
+            onClick={() => setView("dashboard")}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
-              tab === "modules"
+              view === "dashboard"
                 ? "bg-primary text-white shadow-glow-primary"
                 : "bg-white border border-border text-muted hover:text-foreground shadow-soft"
             }`}
           >
-            Training Modules
+            Behaviour Signals
           </button>
           <button
-            onClick={() => setTab("campaigns")}
+            onClick={() => setView("adaptive")}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
-              tab === "campaigns"
+              view === "adaptive"
                 ? "bg-primary text-white shadow-glow-primary"
                 : "bg-white border border-border text-muted hover:text-foreground shadow-soft"
             }`}
           >
-            Phishing Simulations
+            Adaptive Response
           </button>
         </div>
 
-        {tab === "modules" && (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {modules.map((m) => {
-              const colorMap: Record<string, { bar: string; text: string; bg: string }> = {
-                accent: { bar: "bg-accent", text: "text-accent", bg: "bg-accent/10" },
-                green: { bar: "bg-green", text: "text-green", bg: "bg-green/10" },
-                amber: { bar: "bg-amber", text: "text-amber", bg: "bg-amber/10" },
-              };
-              const c = colorMap[m.color];
-              return (
-                <div key={m.title} className="rounded-2xl bg-white shadow-soft border border-border/50 p-5 hover:border-primary/20 hover:shadow-glow-primary/20 transition-all">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className={`text-[10px] font-mono ${c.text} ${c.bg} px-2 py-0.5 rounded`}>
-                      {m.difficulty.toUpperCase()}
-                    </span>
-                    <span className="text-[10px] font-mono text-muted">{m.duration}</span>
-                  </div>
-                  <h4 className="font-semibold text-foreground text-sm mb-2">{m.title}</h4>
-                  <div className="flex flex-wrap gap-1.5 mb-3">
-                    {m.topics.map((t) => (
-                      <span key={t} className="text-[10px] font-medium text-muted bg-surface px-1.5 py-0.5 rounded">
-                        {t}
+        {view === "dashboard" && (
+          <div className="space-y-8">
+            {/* Behaviour score cards */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {behaviourSignals.map((signal) => {
+                const colorMap: Record<string, { bar: string; text: string; bg: string }> = {
+                  green: { bar: "bg-green", text: "text-green", bg: "bg-green/10" },
+                  accent: { bar: "bg-accent", text: "text-accent", bg: "bg-accent/10" },
+                  amber: { bar: "bg-amber", text: "text-amber", bg: "bg-amber/10" },
+                };
+                const c = colorMap[signal.color];
+                return (
+                  <div key={signal.label} className="rounded-2xl bg-white shadow-soft border border-border/50 p-5">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-xs font-medium text-muted">{signal.label}</span>
+                      <span className={`flex items-center gap-1 text-xs font-semibold ${c.text}`}>
+                        {signal.trend === "up" ? (
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="18 15 12 9 6 15" />
+                          </svg>
+                        ) : (
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                          </svg>
+                        )}
                       </span>
-                    ))}
-                  </div>
-                  <div>
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-[10px] font-mono text-muted">COMPLETION</span>
-                      <span className={`text-xs font-mono font-bold ${c.text}`}>{m.completionRate}%</span>
                     </div>
-                    <div className="w-full h-1.5 bg-surface-3 rounded-full overflow-hidden">
+                    <div className="flex items-end gap-2 mb-2">
+                      <span className="text-3xl font-bold text-foreground">{signal.score}</span>
+                      <span className="text-sm text-muted mb-1">/100</span>
+                    </div>
+                    <div className="w-full h-2 bg-surface-3 rounded-full overflow-hidden mb-3">
                       <div
                         className={`h-full rounded-full ${c.bar} transition-all duration-700`}
-                        style={{ width: `${m.completionRate}%` }}
+                        style={{ width: `${signal.score}%` }}
                       />
                     </div>
+                    <p className="text-[11px] text-muted leading-relaxed">{signal.detail}</p>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
+
+            {/* Habit streaks */}
+            <div className="rounded-2xl bg-white shadow-soft border border-border/50 p-6">
+              <h3 className="font-semibold text-foreground text-sm mb-4 flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+                Active Habit Streaks
+              </h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {habitStreaks.map((streak) => (
+                  <div key={streak.name} className="flex items-center gap-3 p-3 rounded-xl bg-surface">
+                    <div className={`w-2 h-2 rounded-full ${streak.status === "active" ? "bg-green animate-pulse" : "bg-amber"}`} />
+                    <div>
+                      <span className="text-xs font-medium text-foreground block">{streak.name}</span>
+                      <span className="text-[11px] text-muted">{streak.value}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Explanation */}
+            <div className="rounded-xl border border-primary/10 bg-primary/5 p-5">
+              <p className="text-sm text-muted leading-relaxed">
+                <span className="text-primary font-semibold">How it works:</span> Behaviour signals are
+                derived from real interactions — phishing simulation responses, MFA adoption rates,
+                reporting speed, and data handling patterns. Scores update continuously, not quarterly.
+                When a score drops, the engine automatically queues a targeted micro-intervention.
+              </p>
+            </div>
           </div>
         )}
 
-        {tab === "campaigns" && (
-          <div className="space-y-2">
-            <div className="hidden sm:grid grid-cols-12 gap-3 px-4 py-2 text-[10px] font-mono text-muted uppercase tracking-widest">
-              <div className="col-span-4">Campaign</div>
-              <div className="col-span-1">Type</div>
-              <div className="col-span-1 text-center">Status</div>
-              <div className="col-span-2 text-center">Sent</div>
-              <div className="col-span-2 text-center">Clicked</div>
-              <div className="col-span-2 text-center">Reported</div>
+        {view === "adaptive" && (
+          <div className="space-y-8">
+            {/* Adaptive recommendations */}
+            <div className="space-y-3">
+              <h3 className="text-sm font-semibold text-foreground mb-1">Engine Recommendations</h3>
+              <p className="text-xs text-muted mb-4">
+                Based on live behavioural data, the engine generates targeted interventions — no manual scheduling required.
+              </p>
+              {adaptiveRecommendations.map((rec, i) => {
+                const urgencyStyle: Record<string, { dot: string; bg: string }> = {
+                  high: { dot: "bg-red", bg: "border-l-red" },
+                  medium: { dot: "bg-amber", bg: "border-l-amber" },
+                  low: { dot: "bg-green", bg: "border-l-green" },
+                };
+                const u = urgencyStyle[rec.urgency];
+                return (
+                  <div
+                    key={i}
+                    className={`rounded-xl bg-white shadow-soft border border-border/50 border-l-4 ${u.bg} p-5`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className={`w-2 h-2 rounded-full ${u.dot} mt-1.5 shrink-0`} />
+                      <div>
+                        <p className="text-xs text-muted mb-1">
+                          <span className="font-medium text-foreground">Trigger:</span> {rec.trigger}
+                        </p>
+                        <p className="text-sm font-medium text-foreground">
+                          {rec.action}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            {campaigns.map((c) => {
-              const ss = statusStyle[c.status];
-              const clickRate = c.sent > 0 ? Math.round((c.clicked / c.sent) * 100) : 0;
-              const reportRate = c.sent > 0 ? Math.round((c.reported / c.sent) * 100) : 0;
-              return (
-                <div
-                  key={c.id}
-                  className="grid grid-cols-12 gap-3 items-center rounded-xl bg-white shadow-soft border border-border/50 px-4 py-3"
-                >
-                  <div className="col-span-12 sm:col-span-4">
-                    <span className="text-sm font-medium text-foreground">{c.name}</span>
+
+            {/* How adaptive works */}
+            <div className="rounded-2xl bg-white shadow-soft border border-border/50 p-6">
+              <h3 className="font-semibold text-foreground text-sm mb-4">The Adaptive Loop</h3>
+              <div className="grid sm:grid-cols-4 gap-4">
+                {[
+                  { step: "1", label: "Observe", desc: "Monitor real behaviour signals" },
+                  { step: "2", label: "Assess", desc: "Score against risk thresholds" },
+                  { step: "3", label: "Intervene", desc: "Queue targeted micro-modules" },
+                  { step: "4", label: "Measure", desc: "Track behaviour change over time" },
+                ].map((s) => (
+                  <div key={s.step} className="text-center p-4 rounded-xl bg-surface">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                      <span className="text-primary font-bold text-xs">{s.step}</span>
+                    </div>
+                    <span className="text-sm font-semibold text-foreground block mb-1">{s.label}</span>
+                    <span className="text-[11px] text-muted">{s.desc}</span>
                   </div>
-                  <div className="col-span-3 sm:col-span-1">
-                    <span className="text-muted">{typeIcon[c.type]}</span>
-                  </div>
-                  <div className="col-span-3 sm:col-span-1 flex justify-center">
-                    <span className={`flex items-center gap-1.5 text-[10px] font-mono ${ss.text}`}>
-                      <span className={`w-1.5 h-1.5 rounded-full ${ss.dot} ${c.status === "active" ? "animate-pulse" : ""}`} />
-                      {ss.label}
-                    </span>
-                  </div>
-                  <div className="col-span-2 sm:col-span-2 text-center">
-                    <span className="text-sm font-mono text-foreground">{c.sent || "—"}</span>
-                  </div>
-                  <div className="col-span-2 sm:col-span-2 text-center">
-                    {c.sent > 0 ? (
-                      <span className={`text-sm font-mono ${clickRate > 15 ? "text-red" : clickRate > 5 ? "text-amber" : "text-green"}`}>
-                        {c.clicked} <span className="text-[10px] text-muted">({clickRate}%)</span>
-                      </span>
-                    ) : (
-                      <span className="text-sm font-mono text-muted">—</span>
-                    )}
-                  </div>
-                  <div className="col-span-2 sm:col-span-2 text-center">
-                    {c.sent > 0 ? (
-                      <span className={`text-sm font-mono ${reportRate > 60 ? "text-green" : reportRate > 30 ? "text-amber" : "text-red"}`}>
-                        {c.reported} <span className="text-[10px] text-muted">({reportRate}%)</span>
-                      </span>
-                    ) : (
-                      <span className="text-sm font-mono text-muted">—</span>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-            <div className="rounded-xl border border-primary/10 bg-primary/5 p-4 mt-3">
-              <p className="text-xs text-muted leading-relaxed">
-                <span className="text-primary font-semibold">NOTE:</span> This is sample campaign data.
-                Your simulations are tailored to your industry, tech stack, and common threat patterns.
-                Campaigns run continuously with escalating difficulty to build real resilience.
+                ))}
+              </div>
+            </div>
+
+            {/* Note */}
+            <div className="rounded-xl border border-primary/10 bg-primary/5 p-5">
+              <p className="text-sm text-muted leading-relaxed">
+                <span className="text-primary font-semibold">Key difference:</span> Traditional training
+                assigns the same content to everyone on a fixed schedule. Our engine observes each
+                person&apos;s actual behaviour, identifies gaps, and delivers precisely the right
+                intervention at the right moment — then measures whether the behaviour actually changed.
               </p>
             </div>
           </div>
