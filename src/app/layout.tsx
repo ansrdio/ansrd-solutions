@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   description:
     "Get certified and secure without hiring a CISO. We turn Cyber Essentials, ISO 27001, NIST CSF and SOC 2 into prioritized implementation plans your team can follow.",
   metadataBase: new URL("https://www.ansrdsolutions.com"),
+  icons: {
+    icon: "/logo.JPG",
+    apple: "/logo.JPG",
+  },
   openGraph: {
     type: "website",
     title: "ANSRD Solutions — Cybersecurity Governance for SMEs",
